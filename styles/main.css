@@ -403,7 +403,7 @@ section {
 
   nav li a {
     display: flex;
-    color: var(--red);
+    color: var(--blue);
     font-weight: bold;
   }
 }
