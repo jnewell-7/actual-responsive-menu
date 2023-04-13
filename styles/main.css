@@ -302,9 +302,6 @@ nav li a:hover {
   margin: 0;
 }
 
-.blur {
-  filter: blur(1px);
-}
 
 .hero h1 {
   font-size: clamp(2em, 20vw + 1em, 17em);
@@ -489,7 +486,7 @@ section {
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 600px) {
   .panel .text-wrapper {
     height: 70vh;
   }
