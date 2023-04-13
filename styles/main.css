@@ -240,8 +240,8 @@ nav li a:hover {
 /* default menu icon on mobile is a fixed round icon in the top left of the viewport */
 .menu-icon {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   padding: 1.5rem;
   width: 80px;
   height: 80px;
@@ -256,6 +256,7 @@ nav li a:hover {
   stroke-linecap: round;
   transform-origin: center;
   transition: transform 300ms ease;
+
 }
 
 .menu-icon line:first-child {
@@ -371,10 +372,6 @@ section {
   order: -1;
 }
 
-@media (min-width: 500px) {
-  
-}
-
 @media (min-width: 600px) {
   .menu-icon {
     display: none;
@@ -387,6 +384,7 @@ section {
     height: auto;
     background-color: transparent;
     padding: 0;
+    
   }
 
   nav ul {
@@ -399,6 +397,7 @@ section {
     margin: 0;
     align-self: stretch;
     font-size: clamp(0.8em, 4vw, 2em);
+    height: auto
   }
 
   nav li {
@@ -406,12 +405,28 @@ section {
   }
 
   nav li a {
+    color: var(--text);
+    padding-bottom: .5rem;
+    padding-top: .8rem;
+
+  }
+
+  nav a[href]::before {
     display: flex;
     color: var(--text);
     font-weight: bold;
   }
-  
-  nav li a::after {
+
+  nav a[href]:hover {
+    text-decoration: none;
+  }
+
+  nav a[href]:hover::after {
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  nav a[href]::after {
     content: "";
     display: block;
     width: calc(100% + 12px);
@@ -421,16 +436,11 @@ section {
     background-color: var(--blue);
     transform: scale(0);
     transition: transform 200ms ease-in, color 300ms ease-in;
-    transform-origin: right;
+    transform-origin: center;
   }
 
-  nav a[href]:hover {
+  nav li a[href]:hover {
     color: var(--blue);
-  }
-
-  nav a[href]:hover::after {
-    transform: scale(1);
-    transform-origin: left;
   }
 
   .fullscreen {
