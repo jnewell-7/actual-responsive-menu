@@ -114,9 +114,13 @@ p {
 }
 
 h1 {
+  display: flex;
   font-family: "Fjalla One", sans-serif;
-  color: white;
-  /* font-size: 2em; */
+  color: var(--blue);
+  font-size: clamp(0.8em, 15vw, 17em);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 h2 {
@@ -283,6 +287,7 @@ nav li a:hover {
   /* height: 100vh; */
   position: relative;
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
 .hero .text-wrapper {
@@ -306,15 +311,28 @@ nav li a:hover {
   text-shadow: 0px 0px 4px black;
 }
 
+iframe {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin: 0 1rem;
+  
 }
 
 .card {
-  flex: 1 1 0;
+  /* flex: 1 1 0; */
   position: relative;
   transition: 0.3s cubic-bezier(0, 0, 0.5, 1);
   font-size: 2em;
@@ -331,11 +349,13 @@ nav li a:hover {
   align-items: center;
   position: absolute;
   font-weight: bold;
+  font-size: clamp(.8em, 6vh, 15vh);
   inset: 0;
   margin: 0;
   padding: 0 1rem;
   text-shadow: 0px 0px 5px black;
   justify-content: center;
+  
 }
 
 .card:hover {
@@ -343,14 +363,12 @@ nav li a:hover {
   overflow: hidden;
   border-radius: 18px;
   white-space: normal;
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  transform: scale(1.05);
-  transition: 0.3s cubic-bezier(0, 0, 0.5, 1);
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 30%);
 }
 
 section {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .panel {
@@ -468,13 +486,21 @@ section {
   }
 
   .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem
   }
 
-  .card {
-    flex: 1 1 40%;
+  .card:hover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    white-space: normal;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 20%);
+    transform: scale(1.05);
+    transition: 0.3s cubic-bezier(0, 0, 0.5, 1);
   }
+
 }
 @media (min-width: 1000px) {
   .cards {
@@ -503,6 +529,21 @@ section {
   .card {
     flex: auto;
     transform: scale(1);
+    transition: 0.3s cubic-bezier(0, 0, 0.5, 1);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
   }
 }
 
