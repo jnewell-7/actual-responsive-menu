@@ -256,7 +256,6 @@ nav li a:hover {
   stroke-linecap: round;
   transform-origin: center;
   transition: transform 300ms ease;
-
 }
 
 .menu-icon line:first-child {
@@ -301,7 +300,6 @@ nav li a:hover {
   font-size: clamp(2em, 1vw + 1em, 15em);
   margin: 0;
 }
-
 
 .hero h1 {
   font-size: clamp(2em, 20vw + 1em, 17em);
@@ -381,7 +379,6 @@ section {
     height: auto;
     background-color: transparent;
     padding: 0;
-    
   }
 
   nav ul {
@@ -394,7 +391,7 @@ section {
     margin: 0;
     align-self: stretch;
     font-size: clamp(0.8em, 4vw, 2em);
-    height: auto
+    height: auto;
   }
 
   nav li {
@@ -403,9 +400,8 @@ section {
 
   nav li a {
     color: var(--text);
-    padding-bottom: .5rem;
-    padding-top: .8rem;
-
+    padding-bottom: 0.5rem;
+    padding-top: 0.8rem;
   }
 
   nav a[href]::before {
